@@ -1,6 +1,15 @@
-import express, { Application, json } from 'express'
+import express, { Application, json } from 'express';
+import "dotenv/config";
+import "express-async-errors";
+import { routes } from './routes/index.router';
+import { handleErrors } from './middlewares/handleError.middleware';
 
-const app: Application = express()
-app.use(json())
+export const app: Application = express();
 
-export default app
+app.use(json());
+
+app.use("/", routes);
+
+app.use(handleErrors);
+
+export default app;

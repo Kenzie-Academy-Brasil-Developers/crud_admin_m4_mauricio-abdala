@@ -10,7 +10,7 @@ const config = (): ClientConfig => {
       database: process.env.DB_TEST,
       port: parseInt(process.env.DB_TEST_PORT!),
     };
-  }
+  };
 
   return {
     user: process.env.DB_USER,
